@@ -9,23 +9,21 @@ public class Funcionario {
     private String nome;
     private Double salario;
 
-    private  List<Funcionario> funcionarios = new ArrayList<>();
+    private static List<Funcionario> funcionarios = new ArrayList<>();
+    private static Integer novoID = 1;
 
     public Funcionario() {
     }
 
-    public Funcionario(Integer id, String nome, Double salario) {
-        this.id = id;
+    public Funcionario( String nome, Double salario) {
+        this.id = novoID++;
         this.nome = nome;
         this.salario = salario;
+        funcionarios.add(this);
     }
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -44,9 +42,8 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public  void cadastrarFuncionario(Integer id, String nome, Double salario) {
-        Funcionario novoFuncionario = new Funcionario(id, nome, salario);
-        funcionarios.add(novoFuncionario);
+    public  void cadastrarFuncionario( String nome, Double salario) {
+        new Funcionario( nome, salario);
     }
 
      public  boolean apagarFuncionario(Integer id) {

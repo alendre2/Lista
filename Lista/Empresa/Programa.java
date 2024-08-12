@@ -29,16 +29,14 @@ public class Programa {
 
                     for (int i = 1; i <= n; i++) {
                         System.out.println("Funcionário nº " + i);
-                        System.out.print("ID: ");
-                        Integer id = sc.nextInt();
-                        sc.nextLine();
                         System.out.print("Nome: ");
                         String nome = sc.nextLine();
                         System.out.print("Salário: ");
                         Double salario = sc.nextDouble();
                         sc.nextLine(); 
 
-                        funcionario.cadastrarFuncionario(id, nome, salario);
+                        funcionario.cadastrarFuncionario( nome, salario);
+
                     }
                     break;
 

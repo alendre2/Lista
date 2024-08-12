@@ -1,4 +1,4 @@
-package Empresa;
+package Empresa.Entidades;
 
 public class Funcionario {
 

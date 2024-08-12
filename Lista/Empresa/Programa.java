@@ -2,6 +2,8 @@ package Empresa;
 
 import java.util.Scanner;
 
+import Empresa.ControleFuncionarios.GerenciadorDeFuncionarios;
+
 public class Programa {
 
     public static void main(String[] args) {

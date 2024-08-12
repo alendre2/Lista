@@ -1,8 +1,10 @@
-package Empresa;
+package Empresa.ControleFuncionarios;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import Empresa.Entidades.Funcionario;
 
 public class GerenciadorDeFuncionarios {
     Scanner sc = new Scanner(System.in);

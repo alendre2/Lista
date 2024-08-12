@@ -55,6 +55,7 @@ public class GerenciadorDeFuncionarios {
         Double porcentagem = sc.nextDouble();
         sc.nextLine();
 
+        if (porcentagem >= 1 ){
         boolean funcionarioEncontrado = false;
         for (Funcionario funcionario : funcionarios) {
             if (funcionario.getId().equals(idAlterar)) {
@@ -68,7 +69,9 @@ public class GerenciadorDeFuncionarios {
         if (funcionarioEncontrado == false) {
             System.out.println("Funcionário com ID " + idAlterar + " não encontrado.");
         } 
-
+    }else{
+        System.out.println("Porcentagem invalida");
+    }
         
     }
 

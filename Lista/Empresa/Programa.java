@@ -6,7 +6,7 @@ public class Programa {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Funcionario funcionario = new Funcionario();
+        GerenciadorDeFuncionarios gerenciador = new GerenciadorDeFuncionarios();
         boolean continuar = true;
 
         while (continuar) {
@@ -23,53 +23,20 @@ public class Programa {
 
             switch (opcao) {
                 case 1:
-                    System.out.print("Quantos funcionários serão cadastrados?: ");
-                    Integer n = sc.nextInt();
-                    sc.nextLine(); 
-
-                    for (int i = 1; i <= n; i++) {
-                        System.out.println("Funcionário nº " + i);
-                        System.out.print("Nome: ");
-                        String nome = sc.nextLine();
-                        System.out.print("Salário: ");
-                        Double salario = sc.nextDouble();
-                        sc.nextLine(); 
-
-                        funcionario.cadastrarFuncionario( nome, salario);
-
-                    }
+                    gerenciador.cadastrarFuncionario();
                     break;
 
                 case 2:
-                    System.out.print("Informe o ID do funcionário que será apagado: ");
-                    Integer idRemover = sc.nextInt();
-                    sc.nextLine(); 
-                    boolean removido = funcionario.apagarFuncionario(idRemover);
-                    if (removido == true) {
-                        System.out.println("Funcionário com ID " + idRemover + " removido com sucesso.");
-                    }else{
-                        System.out.println("Funcionário com ID " + idRemover + " invalido.");
-
-                    }
+                    gerenciador.apagarFuncionario();
                     break;
 
                 case 3:
-                    System.out.print("Informe o ID do funcionário cujo salário será alterado: ");
-                    Integer idAlterar = sc.nextInt();
-                    System.out.print("Insira a porcentagem: ");
-                    Double porcentagem = sc.nextDouble();
-                    sc.nextLine();
-                    boolean alterado = funcionario.alterarSalario(idAlterar, porcentagem);
-                    if (alterado == false) {
-                        System.out.println("Funcionário com ID " + idAlterar + " não encontrado.");
-                    } else {
-                        System.out.println("Salário do funcionário com ID " + idAlterar + " alterado.");
-                    }
+                    gerenciador.alterarSalario();
                     break;
 
                 case 4:
                 
-                    funcionario.exibirFuncionarios();
+                    gerenciador.exibirFuncionarios();
                     break;
 
                 case 5:
